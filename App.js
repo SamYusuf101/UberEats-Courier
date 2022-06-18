@@ -4,7 +4,7 @@ import orders from './assets/data/orders.json';
 import OrderItem from './src/components/OrderItem';
 import OrderScreen from './src/Screens/OrderScreen';
 import OrderDelivery from './src/Screens/OrderDelivery';
-import demo from './src/Screens/demo';
+
 
 export default function App() {
   return (
