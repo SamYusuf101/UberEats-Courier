@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , FlatList, SafeAreaView} from 'react-native';
 import { NavigationContainer } from "@react-navigation/native";
-import OrderDelivery from './src/Screens/OrderDelivery';
+import Navigation from './src/navigation';
 
 
 export default function App() {
   return (
     <NavigationContainer>
     <View style={styles.container}> 
-     <OrderDelivery />
+     <Navigation />
       <StatusBar style="auto" />
     </View>
     </NavigationContainer>

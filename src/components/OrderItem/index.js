@@ -1,28 +1,29 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View , Image} from 'react-native';
-import orders from '../../../assets/data/orders.json';
+import { StyleSheet, Text, View, Image, Pressable } from 'react-native';
 import { Entypo } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native"; 
 
 
-
-const OrderItem = ({order}) => {
+const OrderItem = ({ order }) => {
+  const navigation = useNavigation();
   return (
-    
-    <View style={styles.foodBox}>  
-      <Image source={{uri: order.Restaurant.image}} style={styles.image} /> 
-      <View style={{marginLeft:8, flex:1, paddingVertical:5}}>
-      <Text style={{fontSize:16, fontWeight:'500'}}>{order.Restaurant.name}</Text>
-      <Text style={{color:'grey'}}>{order.Restaurant.address}</Text>
-      <Text style={{marginTop:10}}>Delivery details</Text>
-      <Text style={{color:'grey'}}>{order.User.name}</Text>
-      <Text style={{color:'grey'}}>{order.User.address}</Text>
+
+    <Pressable style={styles.foodBox} 
+    onPress={() => navigation.navigate('OrderDelivery', {id: order.id})}>
+      <Image source={{ uri: order.Restaurant.image }} style={styles.image} />
+      <View style={{ marginLeft: 8, flex: 1, paddingVertical: 5 }}>
+        <Text style={{ fontSize: 16, fontWeight: '500' }}>{order.Restaurant.name}</Text>
+        <Text style={{ color: 'grey' }}>{order.Restaurant.address}</Text>
+        <Text style={{ marginTop: 10 }}>Delivery details</Text>
+        <Text style={{ color: 'grey' }}>{order.User.name}</Text>
+        <Text style={{ color: 'grey' }}>{order.User.address}</Text>
       </View>
       <View style={styles.icon}>
-      <Entypo name="check" size={30} color='white'  style={{marginLeft:'auto'}}/>
+        <Entypo name="check" size={30} color='white' style={{ marginLeft: 'auto' }} />
       </View>
-     
-    </View>
-   
+
+    </Pressable>
+
   );
 }
 
@@ -35,25 +36,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   foodBox: {
-    flexDirection:'row', 
-    margin:10, 
-    borderColor:'green', 
-    borderWidth:2, 
-    borderRadius:12
+    flexDirection: 'row',
+    margin: 10,
+    borderColor: 'green',
+    borderWidth: 2,
+    borderRadius: 12
   },
   image: {
-    width:'25%', 
-    height:'100%', 
-    borderBottomLeftRadius:10, 
-    borderTopLeftRadius:10
+    width: '25%',
+    height: '100%',
+    borderBottomLeftRadius: 10,
+    borderTopLeftRadius: 10
   },
   icon: {
-    backgroundColor:'#3fc060', 
-    borderBottomRightRadius:10, 
-    borderTopRightRadius:10, 
-    alignItems:'center', 
-    justifyContent:'center',
-    padding:5
+    backgroundColor: '#3fc060',
+    borderBottomRightRadius: 10,
+    borderTopRightRadius: 10,
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 5
   }
 
 });
