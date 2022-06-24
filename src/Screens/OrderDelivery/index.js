@@ -4,14 +4,16 @@ import React from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { FontAwesome5, Fontisto } from "@expo/vector-icons";
 import orders from '../../../assets/data/orders.json';
-import styles from '../OrderDelivery/styles'
+import styles from '../OrderDelivery/styles';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import MapView from "react-native-maps";
 
 const order = orders[0];
 
 const OrderDelivery = () => {
 
     const bottomSheetRef = useRef(null);
-    const snapPoints = useMemo(() => ["100%", "90%"], [])
+    const snapPoints = useMemo(() => ["20%", "90%"], [])
     const margin = {
         marginTop:10
     }
@@ -19,6 +21,7 @@ const OrderDelivery = () => {
     return (
 
         <View style={{ backgroundColor: 'lightblue', flex: 1 }}>
+        <GestureHandlerRootView style={{ flex: 1 }}>
             <BottomSheet ref={bottomSheetRef} index={1} snapPoints={snapPoints}
                 handleIndicatorStyle={{ backgroundColor: 'red', width: 100 }} >
                 <View style={styles.ShoppingIcon}>
@@ -53,6 +56,7 @@ const OrderDelivery = () => {
                     <Text style={styles.buttonText}>Accept Order</Text>
                 </View>
             </BottomSheet>
+            </GestureHandlerRootView>
         </View>
 
     )
