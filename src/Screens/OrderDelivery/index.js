@@ -4,13 +4,14 @@ import React from 'react';
 import BottomSheet from '@gorhom/bottom-sheet';
 import { FontAwesome5, Fontisto } from "@expo/vector-icons";
 import orders from '../../../assets/data/orders.json';
+import styles from '../OrderDelivery/styles'
 
 const order = orders[0];
 
 const OrderDelivery = () => {
 
     const bottomSheetRef = useRef(null);
-    const snapPoints = useMemo(() => ["10%", "80%"], [])
+    const snapPoints = useMemo(() => ["100%", "90%"], [])
     const margin = {
         marginTop:10
     }
@@ -48,6 +49,9 @@ const OrderDelivery = () => {
                         <Text style={styles.orderTitle}>Shawarma</Text>
                     </View>
                 </View>
+                <View style={styles.button}>
+                    <Text style={styles.buttonText}>Accept Order</Text>
+                </View>
             </BottomSheet>
         </View>
 
@@ -56,39 +60,3 @@ const OrderDelivery = () => {
 
 export default OrderDelivery;
 
-const styles = StyleSheet.create ({
-    RestaurantName: {
-         fontSize: 25, 
-         letterSpacing: 1, 
-         paddingVertical: 10 
-    },
-    orderTitle: {
-        
-        marginBottom:5, 
-        fontSize:18, 
-        color:'grey'
-    },
-    margin: {
-        marginTop:10
-    },
-    ShoppingIcon: { 
-        marginTop: 10, 
-        flexDirection: "row", 
-        alignItems: "center", 
-        justifyContent: "center" 
-    },
-    RestaurantAddress: { 
-        fontSize: 25, 
-        fontWeight: '500', 
-        color: 'grey', 
-        marginLeft: 15, 
-        textAlign:'center' 
-    },
-    UserAddress: { 
-        fontSize: 20, 
-        fontWeight: '500', 
-        color: 'grey', 
-        marginLeft: 15,
-        textAlign:'center'
-    }
-})

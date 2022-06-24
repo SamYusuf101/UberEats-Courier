@@ -14,21 +14,21 @@ const OrderScreen = () => {
 
   const snapPoints = useMemo(() => ["20%", "95%"], [])
 
-  
+
   return (
-    <View style={{ backgroundColor:'lightblue', flex:1}}>
-    <GestureHandlerRootView style={{flex:1}}>
-    <BottomSheet ref={bottomSheetRef} index={1} snapPoints={snapPoints} >
-    <View style={{ alignItems:'center', marginBottom:30}}>
-      <Text style={{fontSize:20, fontWeight:"600", letterSpacing:0.5}}>You're Online</Text>
-      <Text style={{letterSpacing:0.5, color:"grey"}}>Available Orders: {orders.length}</Text>
-    </View>
-    <FlatList
-       data={orders}
-       renderItem={({item}) => <OrderItem order={item} />}
-        />
-    </BottomSheet>
-    </GestureHandlerRootView>
+    <View style={{ backgroundColor: 'lightblue', flex: 1 }}>
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <BottomSheet ref={bottomSheetRef} index={1} snapPoints={snapPoints} >
+          <View style={{ alignItems: 'center', marginBottom: 30 }}>
+            <Text style={{ fontSize: 20, fontWeight: "600", letterSpacing: 0.5 }}>You're Online</Text>
+            <Text style={{ letterSpacing: 0.5, color: "grey" }}>Available Orders: {orders.length}</Text>
+          </View>
+          <FlatList
+            data={orders}
+            renderItem={({ item }) => <OrderItem order={item} />}
+          />
+        </BottomSheet>
+      </GestureHandlerRootView>
 
     </View>
   )

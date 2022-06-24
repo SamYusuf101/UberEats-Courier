@@ -1,17 +1,17 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View , FlatList, SafeAreaView} from 'react-native';
-import orders from './assets/data/orders.json';
-import OrderItem from './src/components/OrderItem';
-import OrderScreen from './src/Screens/OrderScreen';
+import { NavigationContainer } from "@react-navigation/native";
 import OrderDelivery from './src/Screens/OrderDelivery';
 
 
 export default function App() {
   return (
+    <NavigationContainer>
     <View style={styles.container}> 
-   <OrderDelivery />
-   <StatusBar style="auto" />
+     <OrderDelivery />
+      <StatusBar style="auto" />
     </View>
+    </NavigationContainer>
   );
 }
 
