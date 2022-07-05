@@ -30,8 +30,8 @@ npm react-native run-android
 
 # Screenshots
 
-![uber](assets/1.jpg)
-![uber](assets/2.jpg)
+![uber](assets/r1.jpg)
+![uber](assets/r2.jpg)
 
 
 
