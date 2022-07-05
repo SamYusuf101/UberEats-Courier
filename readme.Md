@@ -8,7 +8,8 @@ Built in with Google map Api
 Please set up a React Native development environment if you have not already done so.
 You will also need to install dependencies:
 npm i\
-Insert Google Api key to show Courier/Driver route
+Insert Google Api key to show Courier/Driver route.\
+Install gorhom/bottom-sheet view 'npm i @gorhom/bottom-sheet'.
 
 
 # Running iOS on a Mac via a simulator
